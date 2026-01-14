@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: frozen-music-bot
+    name: VK_MUSIC_BOT
     env: python
     plan: free
     buildCommand: "pip install -r requirements.txt"
