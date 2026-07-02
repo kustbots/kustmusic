@@ -19,7 +19,8 @@ logger = logging.getLogger(__name__)
 _ASSISTANT_JOIN_ERRORS = (
     "peeridinvalid", "peer_id_invalid", "channelprivate",
     "not in chat", "usernotparticipant", "groupcallinvalid",
-    "invalid peer", "chatadminrequired",
+    "invalid peer", "chatadminrequired", "channelinvalid",
+    "channel_invalid",
 )
 
 
