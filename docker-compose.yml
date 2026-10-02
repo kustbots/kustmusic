@@ -1,0 +1,4 @@
+services:
+  kustmusic:
+    build: .
+    env_file: .env

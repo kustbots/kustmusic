@@ -1,42 +1,146 @@
 {
-  "name": "Kust Music Bot",
-  "description": "🎧 Kust Music — Free Telegram VC music bot that runs on Render, Koyeb, Railway & Heroku easily!",
+  "name": "KustMusic",
+  "description": "A Telegram music bot for group video chats.",
   "repository": "https://github.com/kustbots/kustmusic",
-  "logo": "https://telegra.ph/file/d02b81736a7e9519c6386.jpg",
-  "keywords": ["telegram", "music", "bot", "vc", "python"],
+  "keywords": [
+    "telegram",
+    "music",
+    "bot",
+    "go"
+  ],
   "stack": "container",
   "env": {
     "API_ID": {
-      "description": "Your Telegram API_ID from https://my.telegram.org",
+      "description": "Your Telegram API ID.",
       "required": true
     },
     "API_HASH": {
-      "description": "Your Telegram API_HASH from https://my.telegram.org",
+      "description": "Your Telegram API hash.",
       "required": true
     },
-    "BOT_TOKEN": {
-      "description": "Your Telegram bot token from @BotFather",
+    "TOKEN": {
+      "description": "Your Telegram bot token.",
       "required": true
     },
-    "ASSISTANT_SESSION": {
-      "description": "Pyrogram string session for assistant account",
+    "MONGO_URI": {
+      "description": "Your MongoDB connection string.",
       "required": true
     },
     "OWNER_ID": {
-      "description": "Your Telegram user ID (integer)",
+      "description": "The user ID of the bot owner.",
+      "required": false,
+      "value": "5938660179"
+    },
+    "LOGGER_ID": {
+      "description": "The group ID for the bot's logs.",
+      "required": true,
+      "value": "-1002166934878"
+    },
+    "SESSION_TYPE": {
+      "description": "The session type (pyrogram, telethon, or gogram).",
+      "required": true,
+      "value": "pyrogram"
+    },
+    "MAX_FILE_SIZE": {
+      "description": "The maximum file size for downloads (in bytes).",
+      "required": false,
+      "value": "524288000"
+    },
+    "STRING1": {
+      "description": "Pyrogram/Telethon/Gogram session string.",
       "required": true
     },
-    "SEARCH_API_URL": {
-      "description": "Search API URL (leave blank to use default)",
+    "STRING2": {
+      "description": "Pyrogram/Telethon/Gogram session string.",
       "required": false
     },
-    "DOWNLOAD_API_BASE": {
-      "description": "Download API base URL (leave blank to use yt-dlp)",
+    "STRING3": {
+      "description": "Pyrogram/Telethon/Gogram session string.",
       "required": false
     },
-    "YOUTUBE_COOKIES": {
-      "description": "Paste your YouTube cookies here (optional, for bypassing rate limits)",
+    "STRING4": {
+      "description": "Pyrogram/Telethon/Gogram session string.",
       "required": false
+    },
+    "STRING5": {
+      "description": "Pyrogram/Telethon/Gogram session string.",
+      "required": false
+    },
+    "STRING6": {
+      "description": "Pyrogram/Telethon/Gogram session string.",
+      "required": false
+    },
+    "STRING7": {
+      "description": "Pyrogram/Telethon/Gogram session string.",
+      "required": false
+    },
+    "STRING8": {
+      "description": "Pyrogram/Telethon/Gogram session string.",
+      "required": false
+    },
+    "STRING9": {
+      "description": "Pyrogram/Telethon/Gogram session string.",
+      "required": false
+    },
+    "STRING10": {
+      "description": "Pyrogram/Telethon/Gogram session string.",
+      "required": false
+    },
+    "API_URL": {
+      "description": "API URL for external services.",
+      "required": false,
+      "value": "https://tgmusic.fallenapi.fun"
+    },
+    "API_KEY": {
+      "description": "API key for external services.",
+      "required": false
+    },
+    "DEFAULT_SERVICE": {
+      "description": "Default music download service (e.g., youtube).",
+      "required": false,
+      "value": "youtube"
+    },
+    "DOWNLOADS_DIR": {
+      "description": "Directory to store downloads.",
+      "required": false
+    },
+    "DB_NAME": {
+      "description": "Name of the MongoDB database.",
+      "required": false,
+      "value": "KustMusic"
+    },
+    "PROXY": {
+      "description": "Proxy URL for the bot.",
+      "required": false
+    },
+    "COOKIES_URL": {
+      "description": "URL to a cookies file for yt-dlp. (vai batbin.me)",
+      "required": false
+    },
+    "SUPPORT_GROUP": {
+      "description": "Link to the support group.",
+      "required": false,
+      "value": "https://t.me/kustbhai"
+    },
+    "SUPPORT_CHANNEL": {
+      "description": "Link to the support channel.",
+      "required": false,
+      "value": "https://t.me/kustbots"
+    },
+    "SONG_DURATION_LIMIT": {
+      "description": "The maximum duration of a song in seconds.",
+      "required": false,
+      "value": "3600"
+    },
+    "DEVS": {
+      "description": "A space-separated list of developer user IDs.",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
     }
   }
 }

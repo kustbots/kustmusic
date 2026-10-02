@@ -1,0 +1,10 @@
+.idea
+td
+td_*
+*.db
+*.dat
+.env
+cookies/*.txt
+downloads
+libntgcalls.a
+libtdjson.so.*
