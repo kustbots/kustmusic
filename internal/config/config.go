@@ -22,7 +22,7 @@ import (
 
 const (
 	defaultDBName         = "KustMusic"
-	defaultAPIURL         = "https://api.onegrab.fun"
+	defaultAPIURL         = ""
 	defaultService        = "youtube"
 	defaultDownloadsDir   = "downloads"
 	defaultSupportGroup   = "https://t.me/kustbhai"

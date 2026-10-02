@@ -28,13 +28,11 @@
     },
     "OWNER_ID": {
       "description": "The user ID of the bot owner.",
-      "required": false,
-      "value": "5938660179"
+      "required": true
     },
     "LOGGER_ID": {
       "description": "The group ID for the bot's logs.",
-      "required": true,
-      "value": "-1002166934878"
+      "required": false
     },
     "SESSION_TYPE": {
       "description": "The session type (pyrogram, telethon, or gogram).",
@@ -88,8 +86,7 @@
     },
     "API_URL": {
       "description": "API URL for external services.",
-      "required": false,
-      "value": "https://tgmusic.fallenapi.fun"
+      "required": false
     },
     "API_KEY": {
       "description": "API key for external services.",
