@@ -1,6 +1,7 @@
 /*
- * TgMusicBot - Telegram Music Bot
- *  Copyright (c) 2025-2026 Ashok Shau
+ * KustMusic - Telegram Music Bot
+ *  Copyright (c) 2026 KustBots
+ *  Based on TgMusicBot, Copyright (c) 2025-2026 Ashok Shau
  *
  *  Licensed under GNU GPL v3
  */
@@ -17,7 +18,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/AshokShau/gotdbot"
+	"github.com/kustbots/gotdbot"
 )
 
 func handleNewChat(c *gotdbot.Client, update *gotdbot.UpdateNewChat) error {

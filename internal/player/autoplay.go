@@ -10,7 +10,7 @@ import (
 	"slices"
 	"time"
 
-	td "github.com/AshokShau/gotdbot"
+	td "github.com/kustbots/gotdbot"
 )
 
 func (c *TelegramCalls) handleAutoplay(bot *td.Client, chatID int64, lastTrackID string) error {

@@ -1,9 +1,10 @@
 /*
- * TgMusicBot - Telegram Music Bot
- *  Copyright (c) 2025-2026 Ashok Shau
+ * KustMusic - Telegram Music Bot
+ *  Copyright (c) 2026 KustBots
+ *  Based on TgMusicBot, Copyright (c) 2025-2026 Ashok Shau
  *
  *  Licensed under GNU GPL v3
- *  See https://github.com/AshokShau/TgMusicBot
+ *  See https://github.com/kustbots/kustmusic
  */
 
 package main
@@ -30,10 +31,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/AshokShau/gotdbot"
+	"github.com/kustbots/gotdbot"
 )
 
-//go:generate go run github.com/AshokShau/gotdbot/scripts/tools
+//go:generate go run github.com/kustbots/gotdbot/scripts/tools
 
 func main() {
 	if port := os.Getenv("PORT"); port != "" {

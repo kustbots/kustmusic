@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/AshokShau/gotdbot"
+	"github.com/kustbots/gotdbot"
 )
 
 // Divider separates a card header from its body.

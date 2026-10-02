@@ -1,9 +1,10 @@
 /*
- * TgMusicBot - Telegram Music Bot
- *  Copyright (c) 2025-2026 Ashok Shau
+ * KustMusic - Telegram Music Bot
+ *  Copyright (c) 2026 KustBots
+ *  Based on TgMusicBot, Copyright (c) 2025-2026 Ashok Shau
  *
  *  Licensed under GNU GPL v3
- *  See https://github.com/AshokShau/TgMusicBot
+ *  See https://github.com/kustbots/kustmusic
  */
 
 package player
@@ -16,8 +17,8 @@ import (
 	"sync"
 	"time"
 
-	td "github.com/AshokShau/gotdbot"
-	l "github.com/AshokShau/gotdbot/logger"
+	td "github.com/kustbots/gotdbot"
+	l "github.com/kustbots/gotdbot/logger"
 )
 
 var logger *l.Logger

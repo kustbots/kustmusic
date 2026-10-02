@@ -3,9 +3,9 @@ module github.com/kustbots/kustmusic
 go 1.26.4
 
 require (
-	github.com/AshokShau/gotdbot v0.9.5
 	github.com/amarnathcjd/gogram v1.7.10
 	github.com/joho/godotenv v1.5.1
+	github.com/kustbots/gotdbot v0.9.6
 	github.com/shirou/gopsutil/v3 v3.24.5
 	go.mongodb.org/mongo-driver/v2 v2.9.1
 )

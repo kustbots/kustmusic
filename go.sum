@@ -1,5 +1,3 @@
-github.com/AshokShau/gotdbot v0.9.5 h1:/p6NzIXqBrc2TSrqMRTNQ48H6FuE/CxXiAo9XtF4oAQ=
-github.com/AshokShau/gotdbot v0.9.5/go.mod h1:oaHOeC6pZoNp6Xp/jWRFw1yUif3/ASG2cxy6y/EMr3o=
 github.com/amarnathcjd/gogram v1.7.10 h1:/r8/z1QSt5DQ8e59f/yBeQzp6krZaB59jbMH/MOVMSk=
 github.com/amarnathcjd/gogram v1.7.10/go.mod h1:tHC1utX4VHx6jJ9S9JcctCJQflBaZy3i+C26gsqv0ts=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
@@ -15,6 +13,8 @@ github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
 github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
 github.com/klauspost/compress v1.20.0 h1:a3C1ke2ohxFymNlb2HWAHjDeKCI90scRskErZkR0ezA=
 github.com/klauspost/compress v1.20.0/go.mod h1:LUdAzn7YLVvxLpc7y3V1m40wESHTgc1422pwwBSKYuI=
+github.com/kustbots/gotdbot v0.9.6 h1:hCelPOTZtBxTOSjpsz0hx52XNKxRfaqliX7BTxwogFw=
+github.com/kustbots/gotdbot v0.9.6/go.mod h1:6+K/kj53oqpELl989seXOVyjL9AGlpH1HmGWEwS2FJ8=
 github.com/lufia/plan9stats v0.0.0-20260802145828-341c2f0c90b5 h1:eveIIGn4BGM3qknO74omf6HYr30/exH+eVUTuAgwjZ0=
 github.com/lufia/plan9stats v0.0.0-20260802145828-341c2f0c90b5/go.mod h1:autxFIvghDt3jPTLoqZ9OZ7s9qTGNAWmYCjVFWPX/zg=
 github.com/power-devops/perfstat v0.0.0-20260805114148-88456608a4f6 h1:jL3a8soXdzuTCcRnKhOmtcsVOObdDTFf4O2B403HPRU=
