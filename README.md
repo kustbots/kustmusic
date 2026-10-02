@@ -2,7 +2,9 @@
 
 A Telegram music bot that plays songs into group voice chats. It is one program: the bot, the playback engine and the downloader all run in a single process, so there is no separate playback API to host. Songs are found and downloaded with [yt-dlp](https://github.com/yt-dlp/yt-dlp).
 
-![KustMusic](internal/assets/dp.jpg)
+<p align="center">
+  <img src="internal/assets/dp.jpg" alt="KustMusic" width="320">
+</p>
 
 ## Features
 
@@ -153,4 +155,4 @@ The voice layer needs the NTgCalls native library, which the Dockerfile download
 
 ## License
 
-GPL-3.0. See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
