@@ -1,8 +1,6 @@
-**
-!go.*
-!*.go
-!internal
-!ntgcalls
-!cookies
-!assets
-!glibc_compatibility.h
+.git
+.env
+*.md
+cookies*
+*.session
+bin/

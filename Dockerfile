@@ -1,58 +1,38 @@
-FROM golang:1.26-bookworm AS builder
-
-WORKDIR /app
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    gcc \
-    zlib1g-dev && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-COPY go.mod go.sum ./
-RUN go mod download
-
-COPY . .
-
-RUN go run github.com/kustbots/gotdbot/scripts/tools
-RUN go run setup_ntgcalls.go
-
-RUN CGO_ENABLED=1 GOOS=linux go build -ldflags="-w -s" -o main .
-
-FROM debian:12-slim AS runtime
+# Build the Go program with the native voice-call library, then run it next to
+# ffmpeg, yt-dlp and a JavaScript runtime (yt-dlp needs one for YouTube).
+FROM golang:1.25-bookworm AS builder
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ffmpeg \
-    wget \
-    unzip \
-    curl \
-    lsb-release \
-    ca-certificates \
+    gcc g++ ca-certificates curl unzip zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN wget -O /usr/local/bin/yt-dlp \
-    https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/latest/download/yt-dlp_linux \
-    && chmod +x /usr/local/bin/yt-dlp
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
 
-RUN curl -fsSL https://deno.land/install.sh | sh \
-    && export DENO_INSTALL="/opt/deno" \
-    && export PATH="$DENO_INSTALL/bin:$PATH" \
-    && mv /root/.deno /opt/deno \
-    && ln -sf /opt/deno/bin/deno /usr/local/bin/deno
+# NTgCalls, the native library that joins voice chats. It is fetched at build
+# time so it never has to be committed.
+RUN curl -sL "https://github.com/pytgcalls/ntgcalls/releases/download/v2.2.5/ntgcalls.linux-x86_64-static_libs.zip" -o /tmp/ntgcalls.zip \
+    && unzip -o /tmp/ntgcalls.zip -d /tmp/ntgcalls \
+    && mkdir -p internal/core/vc/ntgcalls/include internal/core/vc/ntgcalls/lib \
+    && cp /tmp/ntgcalls/include/ntgcalls.h internal/core/vc/ntgcalls/include/ntgcalls.h \
+    && cp /tmp/ntgcalls/lib/libntgcalls.a internal/core/vc/ntgcalls/lib/libntgcalls.a \
+    && rm -rf /tmp/ntgcalls /tmp/ntgcalls.zip
 
-RUN groupadd -r app && useradd -r -g app -m -d /home/app app
+RUN CGO_ENABLED=1 GOOS=linux go build -ldflags="-w -s" -o /app/bin/kustmusic .
 
-ENV DENO_INSTALL="/opt/deno"
-ENV PATH="${DENO_INSTALL}/bin:${PATH}"
-ENV HOME="/home/app"
+FROM python:3.12-slim AS runtime
 
-COPY --from=builder --chown=app:app /app/main /usr/local/bin/app
-COPY --from=builder --chown=app:app /app/libtdjson.so.* /home/app/
-COPY --chown=app:app cookies /home/app/cookies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg ca-certificates curl unzip \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN chown -R app:app /opt/deno
+RUN curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/usr/local sh \
+    && pip install --no-cache-dir "yt-dlp[default]"
 
-USER app
+COPY --from=builder /app/bin/kustmusic /usr/local/bin/kustmusic
 
-WORKDIR /home/app
-ENTRYPOINT ["app"]
+ENV PORT=8000
+EXPOSE 8000
+ENTRYPOINT ["/usr/local/bin/kustmusic"]

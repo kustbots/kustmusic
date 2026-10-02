@@ -1,10 +1,13 @@
-.idea
-td
-td_*
-*.db
-*.dat
+# Secrets. Never commit these.
 .env
-cookies/*.txt
-downloads
-libntgcalls.a
-libtdjson.so.*
+*.env
+!.env.example
+cookies*
+*.session
+*.session-journal
+
+# Build output
+bin/
+*.exe
+internal/core/vc/ntgcalls/lib/
+internal/core/vc/ntgcalls/include/
